@@ -1,0 +1,30 @@
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+public class MainActivity extends AppCompatActivity {
+    ImageView iv;
+    Button btn;
+    boolean flag = true;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        iv = findViewById(R.id.imageView);
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flag){
+                    iv.setImageResource(R.drawable.first);
+                    flag = false;
+                }
+                else{
+                    iv.setImageResource(R.drawable.secondd);
+                    flag = true;
+                }
+            }
+        });
+    }
+}
